@@ -102,24 +102,33 @@ namespace Demo
 
             #region Aggregate Operation [Min,Max,MinBy,MaxBy]
 
-         ///   var MaxProduct = ProductList.Max();//class should implemetn ICombarable
-         ///      MaxProduct = ProductList.Max(new ProductComparer());
-         ///      MaxProduct = ProductList.MaxBy(p=>p.UnitsInStock);
-         ///
-         ///
-         ///   var MinProduct = ProductList.Max();//class should implemetn ICombarable
-         ///   MinProduct = ProductList.Max(new ProductComparer());
-         ///   MinProduct = ProductList.MaxBy(p => p.UnitsInStock);
+            ///   var MaxProduct = ProductList.Max();//class should implemetn ICombarable
+            ///      MaxProduct = ProductList.Max(new ProductComparer());
+            ///      MaxProduct = ProductList.MaxBy(p=>p.UnitsInStock);
+            ///
+            ///
+            ///   var MinProduct = ProductList.Max();//class should implemetn ICombarable
+            ///   MinProduct = ProductList.Max(new ProductComparer());
+            ///   MinProduct = ProductList.MaxBy(p => p.UnitsInStock);
 
 
-         ///  var MaxPrice=ProductList.Max(p=>p.UnitPrice);
-         ///  var Result = ProductList.Max(p => p.ProductName); 
-         ///  
-         ///  
-         ///   MaxPrice=ProductList.Min(p=>p.UnitPrice);
-         ///   Result = ProductList.Min(p => p.ProductName);
-         ///   
+            ///  var MaxPrice=ProductList.Max(p=>p.UnitPrice);
+            ///  var Result = ProductList.Max(p => p.ProductName); 
+            ///  
+            ///  
+            ///   MaxPrice=ProductList.Min(p=>p.UnitPrice);
+            ///   Result = ProductList.Min(p => p.ProductName);
+            ///   
 
+            #endregion
+
+            #region Aggregate operator - Aggregate 
+            /// string[] Name = ["Kermina", "Maged", "Matta", "Leweze"];
+            /// string FullName = Name.Aggregate((str01, str02) => $"{str01} {str02}");
+            ///  FullName = Name.Aggregate("Hello",(str01, str02) => $"{str01} {str02}");
+            ///  FullName = Name.Aggregate("Hello",(str01, str02) => $"{str01} {str02}",(TAccumlate)=>TAccumlate.Replace(' ','*'));
+            ///    
+            /// Console.WriteLine(FullName); 
             #endregion
         }
     }
