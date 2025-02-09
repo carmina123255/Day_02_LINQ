@@ -12,7 +12,7 @@ namespace Demo
     }
     internal class Program
     {
-        
+
         static void Main(string[] args)
         {
 
@@ -130,6 +130,14 @@ namespace Demo
             ///    
             /// Console.WriteLine(FullName); 
             #endregion
+            #region aggregate  CountBy() ,AggregateBy() 
+
+            ///  var orders = new List<Order>();
+            ///
+            ///  var data = orders.OrderBy(o => o.CustomerId).ToList()
+            ///                 .CountBy(Order => Order.CustomerId); ; 
+            #endregion
+
         }
     }
 }

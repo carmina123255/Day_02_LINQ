@@ -62,6 +62,7 @@ namespace Demo
             public int OrderID { get; set; }
             public DateTime OrderDate { get; set; }
             public decimal Total { get; set; }
+            public int CustomerId { get; set; }
 
             public Order(int orderID, DateTime orderDate, decimal total)
             {
