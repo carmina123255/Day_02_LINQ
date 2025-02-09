@@ -1,4 +1,5 @@
 ﻿
+using System.Collections;
 using static Demo.ListGenerator;
 namespace Demo
 {
@@ -59,12 +60,29 @@ namespace Demo
             #endregion
 
             #region Hybrid Syntax 
-           /// var Result =(from P in ProductList
-           ///              where P.ProductID==10
-           ///              select P).FirstOrDefault();
+            /// var Result =(from P in ProductList
+            ///              where P.ProductID==10
+            ///              select P).FirstOrDefault();
             #endregion
 
-          //  Console.WriteLine(Result?.ProductName ?? "NA"); 
+            //  Console.WriteLine(Result?.ProductName ?? "NA"); 
+            #endregion
+
+            #region Aggregate Operation -Immediate Execution 
+
+            /// var Result = ProductList.Count();
+            /// Result = ProductList.Count;
+            /// ProductList.TryGetNonEnumeratedCount(out Result);
+
+            /// var numbers = Enumerable.Range(0, 100);
+            /// var Result = numbers.Count();
+            /// numbers.TryGetNonEnumeratedCount(out Result);
+
+            /// var Result = ProductList.Where(P => P.UnitsInStock == 0).Count();//5
+            ///   Result = ProductList.Count(P => P.UnitsInStock==0);   //5
+            ///     ProductList.Where(P => P.UnitsInStock==0).TryGetNonEnumeratedCount(out Result);//0
+
+            // Console.WriteLine(Result); 
             #endregion
         }
     }
