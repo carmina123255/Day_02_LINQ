@@ -198,26 +198,26 @@ namespace Demo
             /// Result=Seq01.Intersect(Seq02); 
             #endregion
 
-        ///   var Seq01 = new List<Product>()
-        ///   {
-        ///
-        ///       new Product(){ProductID=1,ProductName="chai",Category="Baverage",UnitPrice=18,UnitsInStock=100},
-        ///       new Product(){ProductID=2,ProductName="DoubleShot",Category="Baverage",UnitPrice=19,UnitsInStock=17},
-        ///       new Product(){ProductID=2,ProductName="DoubleShot",Category="Baverage",UnitPrice=19,UnitsInStock=17},
-        ///       new Product(){ProductID=2,ProductName="DoubleShot",Category="Baverage",UnitPrice=19,UnitsInStock=17},
-        ///       new Product(){ProductID=3,ProductName="White Mocka",Category="Condiments",UnitPrice=10,UnitsInStock=13},
-        ///
-        ///   };
-        ///
-        ///   var Seq02 = new List<Product>()
-        ///   {
-        ///         new Product(){ProductID=1,ProductName="chai",Category="Baverage",UnitPrice=18,UnitsInStock=100},
-        ///         new Product(){ProductID=3,ProductName="Ice Mocha",Category="Baverage",UnitPrice=12,UnitsInStock=100},
-        ///         new Product(){ProductID=4,ProductName="Frappe",Category="Condiments",UnitPrice=18,UnitsInStock=200},
-        ///         new Product(){ProductID=5,ProductName="Milk",Category="Baverage",UnitPrice=8,UnitsInStock=10},
-        ///         
-        ///
-        ///   };
+            ///   var Seq01 = new List<Product>()
+            ///   {
+            ///
+            ///       new Product(){ProductID=1,ProductName="chai",Category="Baverage",UnitPrice=18,UnitsInStock=100},
+            ///       new Product(){ProductID=2,ProductName="DoubleShot",Category="Baverage",UnitPrice=19,UnitsInStock=17},
+            ///       new Product(){ProductID=2,ProductName="DoubleShot",Category="Baverage",UnitPrice=19,UnitsInStock=17},
+            ///       new Product(){ProductID=2,ProductName="DoubleShot",Category="Baverage",UnitPrice=19,UnitsInStock=17},
+            ///       new Product(){ProductID=3,ProductName="White Mocka",Category="Condiments",UnitPrice=10,UnitsInStock=13},
+            ///
+            ///   };
+            ///
+            ///   var Seq02 = new List<Product>()
+            ///   {
+            ///         new Product(){ProductID=1,ProductName="chai",Category="Baverage",UnitPrice=18,UnitsInStock=100},
+            ///         new Product(){ProductID=3,ProductName="Ice Mocha",Category="Baverage",UnitPrice=12,UnitsInStock=100},
+            ///         new Product(){ProductID=4,ProductName="Frappe",Category="Condiments",UnitPrice=18,UnitsInStock=200},
+            ///         new Product(){ProductID=5,ProductName="Milk",Category="Baverage",UnitPrice=8,UnitsInStock=10},
+            ///         
+            ///
+            ///   };
 
             ///  var Result= Seq01.Union(Seq02);
             ///
@@ -235,17 +235,33 @@ namespace Demo
             /// Result = Seq02.ExceptBy(Seq01.Select(p=>p.ProductID), P => P.ProductID);
             /// 
 
-            
+
 
             /// foreach (var item in Result) Console.WriteLine(item);
-          
-            
-            
-            
-            
+
+
+
+
+
             #endregion
 
-
+            #region Filteration [Distinct() | DistinctBy() 
+            ///    var Seq01 = new List<Product>()
+            ///    {
+            /// 
+            ///        new Product(){ProductID=1,ProductName="chai",Category="Baverage",UnitPrice=18,UnitsInStock=100},
+            ///        new Product(){ProductID=2,ProductName="DoubleShot",Category="Baverage",UnitPrice=19,UnitsInStock=17},
+            ///        new Product(){ProductID=2,ProductName="DoubleShot",Category="Baverage",UnitPrice=19,UnitsInStock=17},
+            ///        new Product(){ProductID=2,ProductName="DoubleShot",Category="Baverage",UnitPrice=19,UnitsInStock=17},
+            ///        new Product(){ProductID=3,ProductName="White Mocka",Category="Condiments",UnitPrice=10,UnitsInStock=13},
+            /// 
+            ///    };
+            /// 
+            ///   
+            ///   var Result = Seq01.Distinct();
+            ///   Result = Seq01.Distinct(new EqualityComparerwithId());
+            ///   Result = Seq01.DistinctBy(p => p.ProductID); 
+            #endregion
 
 
         }
