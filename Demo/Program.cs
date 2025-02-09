@@ -1,5 +1,6 @@
 ﻿
 using System.Collections;
+using System.Collections.Immutable;
 using static Demo.ListGenerator;
 namespace Demo
 {
@@ -137,6 +138,30 @@ namespace Demo
             ///  var data = orders.OrderBy(o => o.CustomerId).ToList()
             ///                 .CountBy(Order => Order.CustomerId); ; 
             #endregion
+
+
+            #region Converstion (Casting) Operator 
+            ///    List<Product> products = ProductList.Where(p=>p.UnitsInStock == 0).ToList();
+            ///
+            ///    Product[] array =ProductList.Where(p=>p.UnitsInStock==0).ToArray();
+            ///
+            ///
+            ///    Dictionary<long, Product> dictionary01 = ProductList.Where(p => p.UnitsInStock == 0).ToDictionary(p => p.ProductID);
+            ///    Dictionary<long, string> dictionary02 = ProductList.Where(p => p.UnitsInStock == 0)
+            ///        .ToDictionary(p => p.ProductID,p=>p.ProductName);
+            ///    Dictionary<long, string> dictionary03 =ProductList.Where(p=>p.UnitsInStock != 0).ToDictionary(p=>p.ProductID,p=>p.ProductName, EqualityComparer<long>.Default);
+            ///    Dictionary<long, Product> dictionary04 =ProductList.Where(p=>p.UnitsInStock != 0).ToDictionary(p=>p.ProductID ,EqualityComparer<long>.Default);
+            ///
+            ///    var SortedCollection = ProductList.Where(P=>P.UnitsInStock==0).ToImmutableSortedSet();
+            ///
+            ///    SortedCollection.Add(new Product { ProductName = "TEA" });
+            ///
+            ///    foreach (var product in SortedCollection)
+            ///        Console.WriteLine(product); 
+            #endregion
+
+
+
 
         }
     }
