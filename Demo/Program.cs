@@ -15,7 +15,7 @@ namespace Demo
 
         public int GetHashCode([DisallowNull] Product obj)
         {
-           return HashCode.Combine(obj.ProductID);
+            return HashCode.Combine(obj.ProductID);
         }
     }
     internal class ProductComparer : IComparer<Product>
@@ -263,16 +263,18 @@ namespace Demo
             ///   Result = Seq01.DistinctBy(p => p.ProductID); 
             #endregion
 
+
+            #region Quantifier Operator - Return boolean 
             Console.WriteLine(
-           // ProductList.Any()
-           // ProductList.Any(p=>p.UnitsInStock==0)
-           // ProductList.All(p=>p.UnitsInStock>0)
-          //  ProductList.Contains(ProductList[0])
+                // ProductList.Any()
+                // ProductList.Any(p=>p.UnitsInStock==0)
+                // ProductList.All(p=>p.UnitsInStock>0)
+                //  ProductList.Contains(ProductList[0])
 
 
                 );
 
-            #region Quantifier Operator - Return boolean 
+
             //  var seq01 = Enumerable.Range(0, 100);
             //  var seq02=Enumerable.Range(0, 100);
             //  Console.WriteLine(seq01.SequenceEqual(seq02));
@@ -299,6 +301,19 @@ namespace Demo
             ///    Console.WriteLine(Seq01.SequenceEqual(Seq02)); 
             #endregion
 
+
+            #region Transformation operator -Zip 
+            /// string[] Words = { "Ten", "Twenty", "thirty", "fourty" };
+            /// int[] numbers = { 10, 20, 30, 40, 50, 60, 70 };
+            /// var Result = numbers.Zip(Words);
+            /// var Result02 = numbers.Zip(Words,(number,word)=>$"{number}={word}");
+            /// var Result03 = numbers.Zip(Words, [1,2,3]); 
+            /// Console.WriteLine(Result03);
+            ///
+
+
+
+            #endregion
         }
     }
 }
