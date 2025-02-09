@@ -3,8 +3,16 @@ using System.Collections;
 using static Demo.ListGenerator;
 namespace Demo
 {
+    internal class ProductComparer : IComparer<Product>
+    {
+        public int Compare(Product? x, Product? y)
+        {
+            return x?.UnitsInStock.CompareTo(y.UnitsInStock) ?? (y is null ? 0 : -1);
+        }
+    }
     internal class Program
     {
+        
         static void Main(string[] args)
         {
 
@@ -88,7 +96,30 @@ namespace Demo
             #region Aggregate Operation -[Sum,Average]
             /// var Result =  ProductList.Sum(p=>p.UnitPrice);
             ///     Result=ProductList.Average(p=>p.UnitPrice);
-            /// Console.WriteLine(Result);   
+            /// Console.WriteLine(Result); 
+            /// 
+            #endregion
+
+            #region Aggregate Operation [Min,Max,MinBy,MaxBy]
+
+         ///   var MaxProduct = ProductList.Max();//class should implemetn ICombarable
+         ///      MaxProduct = ProductList.Max(new ProductComparer());
+         ///      MaxProduct = ProductList.MaxBy(p=>p.UnitsInStock);
+         ///
+         ///
+         ///   var MinProduct = ProductList.Max();//class should implemetn ICombarable
+         ///   MinProduct = ProductList.Max(new ProductComparer());
+         ///   MinProduct = ProductList.MaxBy(p => p.UnitsInStock);
+
+
+         ///  var MaxPrice=ProductList.Max(p=>p.UnitPrice);
+         ///  var Result = ProductList.Max(p => p.ProductName); 
+         ///  
+         ///  
+         ///   MaxPrice=ProductList.Min(p=>p.UnitPrice);
+         ///   Result = ProductList.Min(p => p.ProductName);
+         ///   
+
             #endregion
         }
     }
