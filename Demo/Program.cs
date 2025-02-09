@@ -263,6 +263,41 @@ namespace Demo
             ///   Result = Seq01.DistinctBy(p => p.ProductID); 
             #endregion
 
+            Console.WriteLine(
+           // ProductList.Any()
+           // ProductList.Any(p=>p.UnitsInStock==0)
+           // ProductList.All(p=>p.UnitsInStock>0)
+          //  ProductList.Contains(ProductList[0])
+
+
+                );
+
+            #region Quantifier Operator - Return boolean 
+            //  var seq01 = Enumerable.Range(0, 100);
+            //  var seq02=Enumerable.Range(0, 100);
+            //  Console.WriteLine(seq01.SequenceEqual(seq02));
+
+
+            ///  var Seq01 = new List<Product>()
+            ///  {
+            ///
+            ///      new Product(){ProductID=1,ProductName="chai",Category="Baverage",UnitPrice=18,UnitsInStock=100},
+            ///      new Product(){ProductID=2,ProductName="DoubleShot",Category="Baverage",UnitPrice=19,UnitsInStock=17},
+            ///      new Product(){ProductID=3,ProductName="White Mocka",Category="Condiments",UnitPrice=10,UnitsInStock=13},
+            ///
+            ///  };
+            ///
+            ///  var Seq02 = new List<Product>()
+            ///  {
+            ///        new Product(){ProductID=1,ProductName="chai",Category="Baverage",UnitPrice=18,UnitsInStock=100},
+            ///      new Product(){ProductID=2,ProductName="DoubleShot",Category="Baverage",UnitPrice=19,UnitsInStock=17},
+            ///        new Product(){ProductID=4,ProductName="Frappe",Category="Condiments",UnitPrice=18,UnitsInStock=200},
+            ///       
+            ///        
+            ///
+            ///  };
+            ///    Console.WriteLine(Seq01.SequenceEqual(Seq02)); 
+            #endregion
 
         }
     }
