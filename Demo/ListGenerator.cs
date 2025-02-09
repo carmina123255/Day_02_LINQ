@@ -8,7 +8,7 @@ using System.Xml.Linq;
 namespace Demo
 {
    
-        class Product : IComparable<Product>
+        class Product : IComparable<Product>,IEquatable<Product>
         {
             public long ProductID { get; set; }
             public string ProductName { get; set; }
@@ -21,7 +21,17 @@ namespace Demo
                 return this.UnitPrice.CompareTo(other?.UnitPrice);
             }
 
-            public override string ToString()
+        public bool Equals(Product? other)
+        {
+            return this.ProductID.Equals(other.ProductID)&&ProductName.Equals(other.ProductName)&&UnitPrice.Equals(other.UnitPrice)
+                &&UnitsInStock.Equals(other.UnitsInStock)&&Category.Equals(other.Category);
+        }
+        public override int GetHashCode()
+        {
+            return HashCode.Combine(ProductID,ProductName, UnitPrice, UnitsInStock, Category);
+        }
+
+        public override string ToString()
                 => $"ProductID: {ProductID}, ProductName: {ProductName}, Category: {Category}, UnitPrice: {UnitPrice:c}, UnitsInStock: {UnitsInStock}";
 
         }

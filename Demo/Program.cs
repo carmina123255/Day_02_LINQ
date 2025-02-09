@@ -1,9 +1,23 @@
 ﻿
 using System.Collections;
 using System.Collections.Immutable;
+using System.Diagnostics.CodeAnalysis;
+using System.Runtime.CompilerServices;
 using static Demo.ListGenerator;
 namespace Demo
 {
+    internal class EqualityComparerwithId : IEqualityComparer<Product>
+    {
+        public bool Equals(Product? x, Product? y)
+        {
+            return x.ProductID.Equals(y.ProductID);
+        }
+
+        public int GetHashCode([DisallowNull] Product obj)
+        {
+           return HashCode.Combine(obj.ProductID);
+        }
+    }
     internal class ProductComparer : IComparer<Product>
     {
         public int Compare(Product? x, Product? y)
@@ -168,6 +182,67 @@ namespace Demo
             /// var Result02 = Enumerable.Repeat<Product>(new Product() { ProductName = "Chicken" },100);
             /// 
             /// var Result03= Enumerable.Empty<Product>(); 
+            #endregion
+
+            #region Set Operator UnionFamiley
+
+            #region Example 01 
+            /// var Seq01 = Enumerable.Range(0, 100);
+            /// var Seq02=Enumerable.Range(50,100);
+            ///
+            /// var Result = Seq01.Union(Seq02);
+            /// Result=Seq01.Concat(Seq02);
+            ///
+            /// Result=Result.Distinct(); //Filteration Operator 
+            /// Result=Seq01.Except(Seq02);
+            /// Result=Seq01.Intersect(Seq02); 
+            #endregion
+
+        ///   var Seq01 = new List<Product>()
+        ///   {
+        ///
+        ///       new Product(){ProductID=1,ProductName="chai",Category="Baverage",UnitPrice=18,UnitsInStock=100},
+        ///       new Product(){ProductID=2,ProductName="DoubleShot",Category="Baverage",UnitPrice=19,UnitsInStock=17},
+        ///       new Product(){ProductID=2,ProductName="DoubleShot",Category="Baverage",UnitPrice=19,UnitsInStock=17},
+        ///       new Product(){ProductID=2,ProductName="DoubleShot",Category="Baverage",UnitPrice=19,UnitsInStock=17},
+        ///       new Product(){ProductID=3,ProductName="White Mocka",Category="Condiments",UnitPrice=10,UnitsInStock=13},
+        ///
+        ///   };
+        ///
+        ///   var Seq02 = new List<Product>()
+        ///   {
+        ///         new Product(){ProductID=1,ProductName="chai",Category="Baverage",UnitPrice=18,UnitsInStock=100},
+        ///         new Product(){ProductID=3,ProductName="Ice Mocha",Category="Baverage",UnitPrice=12,UnitsInStock=100},
+        ///         new Product(){ProductID=4,ProductName="Frappe",Category="Condiments",UnitPrice=18,UnitsInStock=200},
+        ///         new Product(){ProductID=5,ProductName="Milk",Category="Baverage",UnitPrice=8,UnitsInStock=10},
+        ///         
+        ///
+        ///   };
+
+            ///  var Result= Seq01.Union(Seq02);
+            ///
+            ///  Result = Seq01.Union(Seq02, new EqualityComparerwithId());
+            ///  Result =Seq01.UnionBy(Seq02,p=>p.ProductID);
+            /// 
+
+            ///  var Result= Seq01.Intersect(Seq02);
+            ///  Result =Seq02.Intersect(Seq01,new EqualityComparerwithId());
+            ///  Result = Seq02.IntersectBy(Seq01.Select(p=>p.UnitPrice), P => P.UnitPrice);
+
+
+            /// var Result= Seq01.Except(Seq02);
+            /// Result =Seq02.Except(Seq01,new EqualityComparerwithId());
+            /// Result = Seq02.ExceptBy(Seq01.Select(p=>p.ProductID), P => P.ProductID);
+            /// 
+
+            
+
+            /// foreach (var item in Result) Console.WriteLine(item);
+          
+            
+            
+            
+            
             #endregion
 
 
