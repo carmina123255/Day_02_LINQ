@@ -314,6 +314,51 @@ namespace Demo
 
 
             #endregion
+
+            #region Grouping Operator -Chunck 
+            ///    var fruits = new string[] { "Apple", "Orange", "bannana", "XXX", "YYYY", "QQQQ", "AAAA" };
+            ///    var Chunks = fruits.Chunk(3);
+            ///
+            ///    foreach (var chunk in Chunks)
+            ///    {
+            ///        foreach(var item in chunk)  
+            ///        Console.Write($"{item} \t");
+            ///        Console.WriteLine();
+            ///    } 
+            #endregion
+
+            #region Partitioning Operator 
+
+            ///  var Result = ProductList.Where(P => P.UnitsInStock > 0).Take(3);
+            ///  Result = ProductList.Where(P => P.UnitsInStock > 0).Take(new Range(2, 55));
+            ///  Result = ProductList.Where(P => P.UnitsInStock > 0).TakeLast(3);
+            /// 
+            /// 
+            ///  Result = ProductList.Where(P => P.UnitsInStock > 0).Skip(3);
+            ///  Result = ProductList.Where(P => P.UnitsInStock > 0).SkipLast(3);
+            /// 
+            ///  var PageSize = 10;
+            ///  var PageIndex = 4;
+            /// 
+            ///  Result = ProductList.Skip(PageSize * (PageIndex - 1)).Take(PageSize);
+            ///  foreach (var Product in Result) { Console.WriteLine(Product.ProductID); }
+            /// 
+
+
+
+            ///  int[] numbers = { 5, 4, 3, 9, 8, 6, 7, 2, 0 };
+            ///
+            ///  /*take the element while element >Index */
+            ///
+            ///  var Result = numbers.TakeWhile((number, Index) => number > Index);
+            ///
+            ///  /*Get the element of the arrya startig from element divisible by 3*/
+            ///
+            ///   Result =numbers.SkipWhile((number, Index) => number%3!=0);
+            ///
+            ///  foreach( var number in Result) Console.WriteLine(Result);
+
+            #endregion
         }
     }
 }
