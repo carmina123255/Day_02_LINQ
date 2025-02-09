@@ -84,6 +84,12 @@ namespace Demo
 
             // Console.WriteLine(Result); 
             #endregion
+
+            #region Aggregate Operation -[Sum,Average]
+            /// var Result =  ProductList.Sum(p=>p.UnitPrice);
+            ///     Result=ProductList.Average(p=>p.UnitPrice);
+            /// Console.WriteLine(Result);   
+            #endregion
         }
     }
 }
