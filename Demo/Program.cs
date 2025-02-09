@@ -4,6 +4,7 @@ using System.Collections.Immutable;
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using static Demo.ListGenerator;
+using System.Text.RegularExpressions;
 namespace Demo
 {
     internal class EqualityComparerwithId : IEqualityComparer<Product>
@@ -359,6 +360,32 @@ namespace Demo
             ///  foreach( var number in Result) Console.WriteLine(Result);
 
             #endregion
+
+            #region Let/Into 
+            ///   string[] Names = { "kermina", "Mina", "Jounneer", "Maged", "matta" };
+            ///   var Result = from N in Names
+            ///                select Regex.Replace(N,"[aeiouAEIOU]",string.Empty)
+            ///                into NVN
+            ///                where NVN.Length>3
+            ///                select NVN;
+            /// 
+            /// 
+            ///   Result = from N in Names
+            ///            let Nvn = Regex.Replace(N, "[aeiouAEIOU]", string.Empty)
+            ///            where Nvn.Length > 3
+            ///            select Nvn;
+            /// 
+            /// 
+            ///   Result = Names.Select(N => Regex.Replace(N, "[aeiouAEIOU]", string.Empty))
+            ///                   . Where(Nvn=>Nvn.Length > 3);
+            /// 
+            ///   foreach (var N in Result) Console.WriteLine(N); 
+            #endregion
+
+
+
+
+
         }
     }
 }
