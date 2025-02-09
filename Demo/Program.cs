@@ -161,6 +161,16 @@ namespace Demo
             #endregion
 
 
+            #region Generation Operators 
+            /// var Result = Enumerable.Range(0, 100);
+            /// 
+            /// Result = Enumerable.Repeat<int>(2, 100);
+            /// var Result02 = Enumerable.Repeat<Product>(new Product() { ProductName = "Chicken" },100);
+            /// 
+            /// var Result03= Enumerable.Empty<Product>(); 
+            #endregion
+
+
 
 
         }
