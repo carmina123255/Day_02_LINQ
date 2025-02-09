@@ -19,6 +19,18 @@ namespace Demo
             return HashCode.Combine(obj.ProductID);
         }
     }
+    internal class stringEqualityComparer : IEqualityComparer<string>
+    {
+        public bool Equals(string? x, string? y)
+        {
+           return  x?.ToLower().Equals(y?.ToLower())??(y is null ?true:false);
+        }
+
+        public int GetHashCode([DisallowNull] string obj)
+        {
+           return obj.ToLower().GetHashCode();
+        }
+    }
     internal class ProductComparer : IComparer<Product>
     {
         public int Compare(Product? x, Product? y)
@@ -383,7 +395,108 @@ namespace Demo
             #endregion
 
 
+            #region Grouping -Group by 
 
+            ///    var Result = from P in ProductList
+            ///                 group P by P.Category;
+            ///
+            ///    Result = ProductList.GroupBy(P => P.Category);
+            ///
+            ///    foreach(var group in Result)
+            ///    {
+            ///        Console.WriteLine(group.Key);
+            ///            foreach(var item in group)
+            ///        {
+            ///            Console.WriteLine($"...{item.ProductName}");
+            ///        }
+            ///    }
+
+
+            ///   var Result = from P in ProductList
+            ///                where P.UnitsInStock > 0
+            ///                group P by P.Category
+            ///                into PrGroup
+            ///                where PrGroup.Count() > 10
+            ///                select new { Category = PrGroup.Key, Count = PrGroup.Count() };
+            ///
+            ///
+            ///
+            ///   Result = ProductList.Where(P => P.UnitsInStock > 0)
+            ///            .GroupBy(P=>P.Category)
+            ///            .Where(PrGroup=>PrGroup.Count()>10)
+            ///            .Select (PrGroup => new
+            ///            {
+            ///                Category = PrGroup.Key,
+            ///                Count = PrGroup.Count()
+            ///            });
+            ///
+            ///
+            ///   foreach (var item in Result)
+            ///       Console.WriteLine(item);
+
+
+            ///   var Result = ProductList.GroupBy(P=>P.Category, new stringEqualityComparer());
+            ///
+            ///   foreach (var group in Result)
+            ///      {
+            ///          Console.WriteLine($"{group.Key}={group.Count()}");
+            ///      }
+
+
+            ///   var Result = ProductList.GroupBy(P => P.Category, p => new { p.ProductID, p.ProductName });
+            ///
+            ///   foreach(var result in Result)
+            ///   {
+            ///       Console.WriteLine(result.Key);
+            ///       foreach (var Product in result) Console.WriteLine(Product);
+            ///   }
+
+
+            ///  var Result = ProductList.GroupBy(P => P.Category, p => new { p.ProductID, p.ProductName }, new stringEqualityComparer());
+            /// 
+            ///  foreach(var result in Result)
+            ///  {
+            ///      Console.WriteLine(result.Key);
+            ///      foreach (var Product in result) Console.WriteLine(Product);
+            ///  }
+            ///  
+
+
+            /// var Result = ProductList.GroupBy(P => P.Category, (Key, Product) => new { categor = Key, Count = Product.Count() });
+            /// 
+            /// foreach (var item in Result) Console.WriteLine(item);
+            /// 
+
+            ///  var Result = ProductList.GroupBy(P => P.Category, (Key, Product) => new { categor = Key, Count = Product.Count() }, new stringEqualityComparer());
+            /// 
+            ///  foreach (var item in Result) Console.WriteLine(item);
+            ///  
+
+
+            /// var Result = ProductList.GroupBy(P => P.Category, P => new { P.ProductID, P.UnitsInStock }
+            /// , (key, Products) => new { Category = key, Products });
+            ///
+            ///
+            /// foreach (var Product in Result)
+            /// {
+            ///     Console.WriteLine(Product.Category);
+            ///     foreach (var item in Product.Products)
+            ///         Console.WriteLine(item);
+            /// }
+            /// 
+
+
+        ///    var Result = ProductList.GroupBy(P => P.Category, P => new { P.ProductID, P.UnitsInStock }
+        ///    , (key, Products) => new { Category = key, Products }, new stringEqualityComparer());
+        ///
+        ///
+        ///    foreach (var Product in Result)
+        ///    {
+        ///        Console.WriteLine(Product.Category);
+        ///        foreach (var item in Product.Products)
+        ///            Console.WriteLine(item);
+        ///    }
+            #endregion
 
 
         }
