@@ -382,12 +382,26 @@ namespace Assignment
             #region Q03
             ///3. Create one sequence that contains the common first letter from both product and customer names.
 
-        ///   var Result = (ProductList.Select(x => x.ProductName[0])).Intersect(CustomerList.Select(C => C.CustomerName[0]));
-        ///
-        ///   Result = (from p in ProductList select p.ProductName[0])
-        ///       .Intersect(from c in CustomerList select c.CustomerName[0]);
-        ///
-        ///   foreach(var result in Result) Console.WriteLine(result);
+            ///   var Result = (ProductList.Select(x => x.ProductName[0])).Intersect(CustomerList.Select(C => C.CustomerName[0]));
+            ///
+            ///   Result = (from p in ProductList select p.ProductName[0])
+            ///       .Intersect(from c in CustomerList select c.CustomerName[0]);
+            ///
+            ///   foreach(var result in Result) Console.WriteLine(result);
+            #endregion
+
+            #region Q04
+            ///4. Create one sequence that contains the first letters of product names that are not also first letters of customer names.
+            ///
+        
+            
+         ///   var Result = ProductList.Select(x => x.ProductName[0]).Except(CustomerList.Select(c => c.CustomerName[0]));
+         ///
+         ///   Result = (from P in ProductList select P.ProductName[0])
+         ///             .Except(from c in CustomerList select c.CustomerName[0]);
+         ///
+         ///   foreach (var item in Result) Console.WriteLine(item);
+
             #endregion
             #endregion
 
