@@ -8,6 +8,7 @@ using System.Linq;
 using System.Numerics;
 using System.Security.Cryptography;
 using System.Xml.Linq;
+using System.Xml.Schema;
 using static Assignment.ListGenerators;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
@@ -565,23 +566,51 @@ namespace Assignment
             #region Q03
             //3. Return a grouped a list of products only for categories that have all of their products in stock.
 
-        ///   var Result =ProductList.GroupBy(p=>p.Category).Where(p=>p.Any(c=>c.UnitsInStock>0));
-        ///
-        ///   Result = from p in ProductList
-        ///            group p by p.Category
-        ///           into g
-        ///            where g.Any(p=>p.UnitsInStock>0)
-        ///            select g;
-        ///
-        ///
-        ///
-        ///   foreach (var item in Result)
-        ///   {
-        ///       Console.WriteLine(item.Key);
-        ///       foreach(var item2 in item) Console.WriteLine($"--{item2.ProductName}");
-        ///   }
-        ///
+            ///   var Result =ProductList.GroupBy(p=>p.Category).Where(p=>p.Any(c=>c.UnitsInStock>0));
+            ///
+            ///   Result = from p in ProductList
+            ///            group p by p.Category
+            ///           into g
+            ///            where g.Any(p=>p.UnitsInStock>0)
+            ///            select g;
+            ///
+            ///
+            ///
+            ///   foreach (var item in Result)
+            ///   {
+            ///       Console.WriteLine(item.Key);
+            ///       foreach(var item2 in item) Console.WriteLine($"--{item2.ProductName}");
+            ///   }
+            ///
             #endregion
+
+            #endregion
+
+            #region grouping 
+
+            #region Q01
+            ///Use group by to partition a list of numbers by their remainder when divided by 5
+            ///
+
+
+
+        ///   List<int> numbers = new List<int> { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 };
+        ///
+        ///   var Result = numbers.GroupBy(x => x % 5);
+        ///
+        ///   Result = from n in numbers
+        ///            group n by n % 5;
+        ///           
+        ///
+        ///   foreach( var result in Result )
+        ///   {
+        ///       Console.WriteLine(result.Key);
+        ///       foreach (var item in result) Console.WriteLine($"...{item}");
+        ///   }
+
+
+            #endregion
+
 
             #endregion
 
