@@ -1,13 +1,17 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Collections.Immutable;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
+using System.Globalization;
 using System.Linq;
 using System.Numerics;
 using System.Runtime.Intrinsics.X86;
 using System.Security.Cryptography;
+using System.Text.RegularExpressions;
 using System.Xml.Linq;
 using System.Xml.Schema;
 using static Assignment.ListGenerators;
@@ -16,8 +20,11 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Assignment
 {
+ 
+
     internal class Program
     {
+
         static void Main(string[] args)
         {
             #region Element Operators 
@@ -617,35 +624,54 @@ namespace Assignment
             ///Uses group by to partition a list of words by their first letter.Use dictionary_english.txt for Input
             ///
 
-           
-        ///   string filePath = @"D:\Route\LINQ\Session02\Day_02_LINQ\dictionary_english.txt";
+
+            ///   string filePath = @"D:\Route\LINQ\Session02\Day_02_LINQ\dictionary_english.txt";
+            ///
+            ///    if (File.Exists(filePath))
+            ///
+            ///    {
+            ///
+            ///        string[] dictionary = File.ReadAllLines(filePath);
+            ///
+            ///        var Result = dictionary.GroupBy(p => p[0]);
+            ///
+            ///        Result = from d in dictionary
+            ///                 group d by d[0];
+            ///
+            ///        foreach (var item in Result)
+            ///        {
+            ///            Console.WriteLine(item.Key);
+            ///            foreach(var item2 in item) Console.WriteLine($"..{item2}");
+            ///        }
+            ///
+            ///    }
+            ///    else Console.WriteLine("There is no word\n");
+
+            #endregion
+
+            #region Q03
+            // Use Group By with a custom comparer that matches words that are consists of the same Characters Together
+
+        ///    string[] Arr = { "from", "salt", "earn", " last", "near", "form" };
+        ///    var Result = Arr.GroupBy(word =>
+        ///               new string(word.Trim().OrderBy(c => c).ToArray()));
         ///
-        ///    if (File.Exists(filePath))
-        ///
+        ///    foreach (var item in Result)
         ///    {
-        ///
-        ///        string[] dictionary = File.ReadAllLines(filePath);
-        ///
-        ///        var Result = dictionary.GroupBy(p => p[0]);
-        ///
-        ///        Result = from d in dictionary
-        ///                 group d by d[0];
-        ///
-        ///        foreach (var item in Result)
+        ///        //foreach (var item2 in item)
+        ///        foreach (var item2 in item)
         ///        {
-        ///            Console.WriteLine(item.Key);
-        ///            foreach(var item2 in item) Console.WriteLine($"..{item2}");
+        ///            Console.WriteLine(item2.Trim());
         ///        }
-        ///
+        ///        Console.WriteLine("..................");
         ///    }
-        ///    else Console.WriteLine("There is no word\n");
-
-            #endregion
-
-            #endregion
+        ///
+                #endregion
+                #endregion
 
 
 
+            
         }
     }
 }
