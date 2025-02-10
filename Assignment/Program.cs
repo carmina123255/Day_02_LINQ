@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Diagnostics;
 using static Assignment.ListGenerators;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Assignment
 {
@@ -30,18 +31,31 @@ namespace Assignment
             /// Price > 1000, unless there is no match, in which case null is returned.
             /// 
 
-         ///   var Result = ProductList.FirstOrDefault(P => P.UnitPrice > 1000);
-         ///
-         ///   Result = (from p in ProductList
-         ///           where p.UnitPrice>1000
-         ///           select p).FirstOrDefault();
-         ///   Console.WriteLine(Result);
+            ///   var Result = ProductList.FirstOrDefault(P => P.UnitPrice > 1000);
+            ///
+            ///   Result = (from p in ProductList
+            ///           where p.UnitPrice>1000
+            ///           select p).FirstOrDefault();
+            ///   Console.WriteLine(Result);
 
             #endregion
 
+            #region Q03
+          //  3.Retrieve the second number greater than 5
 
+          /// int[] Arr = { 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 };
+          ///
+          ///  var Result = Arr.Where(p => p > 5).ElementAt(1);
+          /// 
+          ///  Result =(from p in Arr
+          ///          .Where(p => p > 5)
+          ///          select p).ElementAt(1);
+          /// 
+          ///  Console.WriteLine(Result);
 
-                #endregion
+            #endregion
+
+            #endregion
         }
-        }
+    }
 }
