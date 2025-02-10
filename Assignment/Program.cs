@@ -5,6 +5,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Numerics;
 using System.Security.Cryptography;
+using System.Xml.Linq;
 using static Assignment.ListGenerators;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
@@ -451,15 +452,31 @@ namespace Assignment
             #region Q02
             ///2. Get all but the first 2 orders from customers in Washington.
             ///
-      
-            ///   var Result = CustomerList.Where(c => c.Country == "Washington").Skip(2);
-          ///
-          ///   Result =( from c in CustomerList
-          ///            where c.Address == "Washington"
-          ///            select c).Skip(2);
-          ///
-         ///   foreach (var Customer in Result) Console.WriteLine(Customer.CustomerName);  
 
+            ///   var Result = CustomerList.Where(c => c.Country == "Washington").Skip(2);
+            ///
+            ///   Result =( from c in CustomerList
+            ///            where c.Address == "Washington"
+            ///            select c).Skip(2);
+            ///
+            ///   foreach (var Customer in Result) Console.WriteLine(Customer.CustomerName);  
+
+
+            #endregion
+
+            #region Q03
+
+           // 3.Return elements starting from the beginning of the array until a number is hit that is less than its position in the array.
+                
+        ///   int[] numbers = { 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 };
+        ///
+        ///   var Result = numbers.TakeWhile((number, index) => index < number);
+        ///
+        ///   Result = from n in numbers
+        ///           .TakeWhile((number, index) => index < number)
+        ///           select n;
+        ///
+        ///   foreach(var number in Result)Console.WriteLine(number);
 
             #endregion
 
