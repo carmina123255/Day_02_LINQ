@@ -370,13 +370,24 @@ namespace Assignment
             #region Q02
             ///Produce a Sequence containing the unique first letter from both product and customer names.
 
-         ///  var Result = ProductList.Select(x => x.ProductName[0]).Union(CustomerList.Select(y => y.CustomerName[0]));
-         ///
-         ///  Result =(from p  in ProductList select p.ProductName[0])
-         ///        .Union(from C in CustomerList select C.CustomerName[0]);
-         ///
-         ///  foreach (var item in Result) Console.WriteLine(item);
-         ///
+            ///  var Result = ProductList.Select(x => x.ProductName[0]).Union(CustomerList.Select(y => y.CustomerName[0]));
+            ///
+            ///  Result =(from p  in ProductList select p.ProductName[0])
+            ///        .Union(from C in CustomerList select C.CustomerName[0]);
+            ///
+            ///  foreach (var item in Result) Console.WriteLine(item);
+            ///
+            #endregion
+
+            #region Q03
+            ///3. Create one sequence that contains the common first letter from both product and customer names.
+
+        ///   var Result = (ProductList.Select(x => x.ProductName[0])).Intersect(CustomerList.Select(C => C.CustomerName[0]));
+        ///
+        ///   Result = (from p in ProductList select p.ProductName[0])
+        ///       .Intersect(from c in CustomerList select c.CustomerName[0]);
+        ///
+        ///   foreach(var result in Result) Console.WriteLine(result);
             #endregion
             #endregion
 
