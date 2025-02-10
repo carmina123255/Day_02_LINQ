@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Diagnostics;
@@ -466,20 +467,36 @@ namespace Assignment
 
             #region Q03
 
-           // 3.Return elements starting from the beginning of the array until a number is hit that is less than its position in the array.
-                
-        ///   int[] numbers = { 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 };
-        ///
-        ///   var Result = numbers.TakeWhile((number, index) => index < number);
-        ///
-        ///   Result = from n in numbers
-        ///           .TakeWhile((number, index) => index < number)
-        ///           select n;
-        ///
-        ///   foreach(var number in Result)Console.WriteLine(number);
+            // 3.Return elements starting from the beginning of the array until a number is hit that is less than its position in the array.
+
+            ///   int[] numbers = { 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 };
+            ///
+            ///   var Result = numbers.TakeWhile((number, index) => index < number);
+            ///
+            ///   Result = from n in numbers
+            ///           .TakeWhile((number, index) => index < number)
+            ///           select n;
+            ///
+            ///   foreach(var number in Result)Console.WriteLine(number);
 
             #endregion
 
+            #region Q04
+            /// 4.Get the elements of the array starting from the first element divisible by 3.
+            /// 
+
+        ///      int[] numbers = { 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 };
+        ///
+        ///     var Result = numbers.SkipWhile(x => x % 3 != 0);
+        ///
+        ///    Result = from n in numbers
+        ///           .SkipWhile(x => x % 3 != 0)
+        ///            select n;
+        ///
+        ///   foreach( var x in Result)Console.WriteLine(x);
+
+
+            #endregion
             #endregion
 
 
