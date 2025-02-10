@@ -502,18 +502,41 @@ namespace Assignment
             /// 5.Get the elements of the array starting from the first element less than its position.
             /// 
 
-        ///   int[] numbers = { 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 };
-        ///
-        ///   var Result = numbers.SkipWhile((number, index) => number>index );
-        ///
-        ///   Result = from n in numbers
-        ///           .SkipWhile((number, index) => number > index)
-        ///            select n;
-        ///
-        ///   foreach (var item in Result)Console.WriteLine(item);
+            ///   int[] numbers = { 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 };
+            ///
+            ///   var Result = numbers.SkipWhile((number, index) => number>index );
+            ///
+            ///   Result = from n in numbers
+            ///           .SkipWhile((number, index) => number > index)
+            ///            select n;
+            ///
+            ///   foreach (var item in Result)Console.WriteLine(item);
 
 
             #endregion
+            #endregion
+
+            #region Quantifiers 
+
+            #region Q01
+            //1. Determine if any of the words in dictionary_english.txt (Read dictionary_english.txt
+            //into Array of String First) contain the substring 'ei'.
+
+
+            ///   string filePath = @"D:\Route\LINQ\Session02\Day_02_LINQ\dictionary_english.txt";
+            ///   if (File.Exists(filePath))
+            ///   {
+            ///       string[] dictionary = File.ReadAllLines(filePath);
+            ///
+            ///     bool Result = dictionary.Any(p => p.Contains("ei"));
+            ///
+            ///     Console.WriteLine(Result);
+            /// 
+            ///     
+            ///   } else Console.WriteLine("There is no word\n");  
+            #endregion
+
+
             #endregion
 
 
