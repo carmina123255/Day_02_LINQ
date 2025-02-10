@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
@@ -536,8 +537,33 @@ namespace Assignment
             ///   } else Console.WriteLine("There is no word\n");  
             #endregion
 
+            #region Q02
+
+          ///  2.Return a grouped a list of products only for categories that have at least one product that is out of stock.
+          ///  
+
+        ///    var Result =ProductList.GroupBy(p=>p.Category).Where(p=>p.Any(c=>c.UnitsInStock==0));
+        ///
+        ///    Result = from p in ProductList
+        ///             group p by p.Category
+        ///            into g
+        ///             where g.Any(p=>p.UnitsInStock==0)
+        ///             select g;
+        ///
+        ///
+        ///
+        ///    foreach (var item in Result)
+        ///    {
+        ///        Console.WriteLine(item.Key);
+        ///        foreach(var item2 in item) Console.WriteLine($"--{item2.ProductName}");
+        ///    }
+                    
+                    
 
             #endregion
+
+
+                #endregion
 
 
 
