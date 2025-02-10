@@ -244,19 +244,37 @@ namespace Assignment
 
             #region Q10
             ///10. Get the cheapest price among each category's products
-           ///
-          
-           
-              ///   var Result = ProductList.GroupBy(p => p.Category).Select(g => new
-              ///   {
-              ///       Category = g.Key,
-              ///       CheapestPrice= g.Min(p=>p.UnitPrice)
-              ///   });
-              ///   
-              ///   foreach (var item in Result) Console.WriteLine(item);
+            ///
+
+
+            ///   var Result = ProductList.GroupBy(p => p.Category).Select(g => new
+            ///   {
+            ///       Category = g.Key,
+            ///       CheapestPrice= g.Min(p=>p.UnitPrice)
+            ///   });
+            ///   
+            ///   foreach (var item in Result) Console.WriteLine(item);
             #endregion
 
+            #region Q11
+            ///1. Get the products with the cheapest price in each category (Use Let)
+            ///
 
+             ///  var Result = (from p in ProductList
+          ///                group p by p.Category
+          ///              into g
+          ///                let minprice = g.Min(P => P.UnitPrice)
+          ///                select new
+          ///                {
+          ///                    Category = g.Key
+          ///                        ,
+          ///                    CheapestPric = minprice
+          ///                }).ToList();
+          /// 
+          ///         foreach(var item in Result) Console.WriteLine(item);
+
+
+            #endregion
             #endregion
 
 
