@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
+using System.Linq;
 using System.Numerics;
 using System.Security.Cryptography;
 using static Assignment.ListGenerators;
@@ -324,27 +325,47 @@ namespace Assignment
             #region Q14
             ///14. Get the average price of each category's products.
 
-       ///  var Result = ProductList.GroupBy(a => a.Category)
-       ///                          .Select(b => new
-       ///                          {
-       ///                              Category =b.Key,
-       ///                              AveragePrice =b.Average(a=>a.UnitPrice)
-       /// 
-       ///                          }).ToList();
-       /// 
-       ///  Result = (from a in ProductList
-       ///           group a by a.Category
-       ///           into b
-       ///           let c = b.Average(a => a.UnitPrice)
-       ///           select new
-       ///           {
-       ///               Category = b.Key,
-       ///               AveragePrice = b.Average(a => a.UnitPrice)
-       ///           }).ToList();
-       /// 
-       ///  foreach(var result in Result) Console.WriteLine(result);
+            ///  var Result = ProductList.GroupBy(a => a.Category)
+            ///                          .Select(b => new
+            ///                          {
+            ///                              Category =b.Key,
+            ///                              AveragePrice =b.Average(a=>a.UnitPrice)
+            /// 
+            ///                          }).ToList();
+            /// 
+            ///  Result = (from a in ProductList
+            ///           group a by a.Category
+            ///           into b
+            ///           let c = b.Average(a => a.UnitPrice)
+            ///           select new
+            ///           {
+            ///               Category = b.Key,
+            ///               AveragePrice = b.Average(a => a.UnitPrice)
+            ///           }).ToList();
+            /// 
+            ///  foreach(var result in Result) Console.WriteLine(result);
             #endregion
 
+            #endregion
+
+            #region Set Operators 
+
+            #region Q01
+            ///1. Find the unique Category names from Product List
+
+        ///   var Result = ProductList.DistinctBy(p => p.Category);
+        ///
+        ///   Result = from p in ProductList
+        ///            group p by p.Category into g
+        ///            select g.First();
+        ///
+        ///
+        ///   foreach (var item in Result) Console.WriteLine(item.Category);
+
+
+
+
+            #endregion
             #endregion
 
 
