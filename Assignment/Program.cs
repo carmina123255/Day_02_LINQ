@@ -281,24 +281,44 @@ namespace Assignment
             ///12. Get the most expensive price among each category's products.
             ///
 
-        ///   var Result =( ProductList.GroupBy(p => p.Category).Select(g => new
-        ///   {
-        ///       Category = g.Key 
-        ///       , ExpensivePrice =  g.Max(P=>P.UnitPrice)
-        ///   })).ToList();
-        /// 
-        ///   Result =( from p in ProductList
-        ///            group p by p.Category
-        ///            into g
-        ///            let MaxPrice = g.Max(p => p.UnitPrice)
-        ///            select new
-        ///            {
-        ///                Category = g.Key
-        ///                      ,
-        ///                ExpensivePrice = MaxPrice
-        ///            }).ToList();
-        /// 
-        ///   foreach (var item in Result) Console.WriteLine(item);
+            ///   var Result =( ProductList.GroupBy(p => p.Category).Select(g => new
+            ///   {
+            ///       Category = g.Key 
+            ///       , ExpensivePrice =  g.Max(P=>P.UnitPrice)
+            ///   })).ToList();
+            /// 
+            ///   Result =( from p in ProductList
+            ///            group p by p.Category
+            ///            into g
+            ///            let MaxPrice = g.Max(p => p.UnitPrice)
+            ///            select new
+            ///            {
+            ///                Category = g.Key
+            ///                      ,
+            ///                ExpensivePrice = MaxPrice
+            ///            }).ToList();
+            /// 
+            ///   foreach (var item in Result) Console.WriteLine(item);
+            #endregion
+
+            ///// 
+            #region Q13
+            ///13. Get the products with the most expensive price in each category.
+
+         ///  var Result = from p in ProductList
+         ///               group p by p.Category
+         ///               into g
+         ///               let MaxPrice = g.Max(p => p.UnitPrice)
+         ///               from gn in g
+         ///               where gn.UnitPrice == MaxPrice
+         ///               select new
+         ///               {
+         ///                   Category = gn.Category,
+         ///                   UnitPrice = gn.ProductName,
+         ///               };
+         ///                           
+         ///
+         ///  foreach(var item in Result) Console.WriteLine(item); 
             #endregion
 
 
