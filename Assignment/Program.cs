@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Diagnostics;
+using System.Numerics;
 using System.Security.Cryptography;
 using static Assignment.ListGenerators;
 using static System.Runtime.InteropServices.JavaScript.JSType;
@@ -93,17 +94,36 @@ namespace Assignment
             #endregion
 
             #region Q03
-           // Return a list of categories and how many products each has
+            // Return a list of categories and how many products each has
 
-          ///  var Result =ProductList.GroupBy(P=>P.Category,(Key,k)=>new {Category =Key, Count=k.Count()}).ToList();
+            ///  var Result =ProductList.GroupBy(P=>P.Category,(Key,k)=>new {Category =Key, Count=k.Count()}).ToList();
+            ///
+            ///  Result =
+            ///          (from p in ProductList
+            ///           group p by p.Category into g
+            ///           select new { Category = g.Key, Count = g.Count() })
+            ///          .ToList();
+            ///
+            ///  foreach (var item in Result) Console.WriteLine(item);
+
+
+            #endregion
+
+
+            #region Q04 
+           /// 4.Get the total of the numbers in an array.
+           /// 
+
+
+          /// int [] Arr = { 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 };
           ///
-          ///  Result =
-          ///          (from p in ProductList
-          ///           group p by p.Category into g
-          ///           select new { Category = g.Key, Count = g.Count() })
-          ///          .ToList();
+          ///  var Result = Arr.Sum();
           ///
-          ///  foreach (var item in Result) Console.WriteLine(item);
+          ///  Result = (from a in Arr
+          ///            select a).Sum();
+          ///
+          ///  Console.WriteLine(Result);
+
 
 
             #endregion
