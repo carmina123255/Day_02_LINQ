@@ -180,22 +180,48 @@ namespace Assignment
             ///
 
 
-        ///    string filePath = @"D:\Route\LINQ\Session02\Day_02_LINQ\dictionary_english.txt";
-        ///      if (File.Exists(filePath))
-        ///      {
-        ///          string[] dictionary = File.ReadAllLines(filePath);
-        ///          
-        ///          var Result = dictionary.Max(x=>x.Length);
-        ///    
-        ///           Result = (from d in dictionary
-        ///                     select d.Length).Max();
-        ///    
-        ///          Console.WriteLine(Result);  
-        ///    
-        ///        
-        ///      } else Console.WriteLine("There is no word\n"); 
+            ///    string filePath = @"D:\Route\LINQ\Session02\Day_02_LINQ\dictionary_english.txt";
+            ///      if (File.Exists(filePath))
+            ///      {
+            ///          string[] dictionary = File.ReadAllLines(filePath);
+            ///          
+            ///          var Result = dictionary.Max(x=>x.Length);
+            ///    
+            ///           Result = (from d in dictionary
+            ///                     select d.Length).Max();
+            ///    
+            ///          Console.WriteLine(Result);  
+            ///    
+            ///        
+            ///      } else Console.WriteLine("There is no word\n"); 
 
             #endregion
+
+            #region Q08 
+
+            ///8. Get the average length of the words in dictionary_english.txt (Read dictionary_english.txt into Array of String First).
+
+
+         ///  string filePath = @"D:\Route\LINQ\Session02\Day_02_LINQ\dictionary_english.txt";
+         ///    if (File.Exists(filePath))
+         ///    {
+         ///        string[] dictionary = File.ReadAllLines(filePath);
+         ///        
+         ///        var Result = dictionary.Average(x=>x.Length);
+         ///  
+         ///         Result = (from d in dictionary
+         ///                   select d.Length).Average();
+         ///  
+         ///        Console.WriteLine(Result);  
+         ///  
+         ///      
+         ///    } else Console.WriteLine("There is no word\n"); 
+
+
+
+            #endregion
+
+
             #endregion
 
 
