@@ -353,18 +353,30 @@ namespace Assignment
             #region Q01
             ///1. Find the unique Category names from Product List
 
-        ///   var Result = ProductList.DistinctBy(p => p.Category);
-        ///
-        ///   Result = from p in ProductList
-        ///            group p by p.Category into g
-        ///            select g.First();
-        ///
-        ///
-        ///   foreach (var item in Result) Console.WriteLine(item.Category);
+            ///   var Result = ProductList.DistinctBy(p => p.Category);
+            ///
+            ///   Result = from p in ProductList
+            ///            group p by p.Category into g
+            ///            select g.First();
+            ///
+            ///
+            ///   foreach (var item in Result) Console.WriteLine(item.Category);
 
 
 
 
+            #endregion
+
+            #region Q02
+            ///Produce a Sequence containing the unique first letter from both product and customer names.
+
+         ///  var Result = ProductList.Select(x => x.ProductName[0]).Union(CustomerList.Select(y => y.CustomerName[0]));
+         ///
+         ///  Result =(from p  in ProductList select p.ProductName[0])
+         ///        .Union(from C in CustomerList select C.CustomerName[0]);
+         ///
+         ///  foreach (var item in Result) Console.WriteLine(item);
+         ///
             #endregion
             #endregion
 
