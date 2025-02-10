@@ -226,20 +226,34 @@ namespace Assignment
             ///9. Get the total units in stock for each product category.
             ///
 
-        ///   var Result = ProductList.GroupBy(p => p.Category)
-        ///                             .Select(g => new
-        ///                             {
-        ///                                 Category = g.Key,
-        ///                                 TotalUnitsInStock = g.Sum(p => p.UnitsInStock)
-        ///                             })
-        ///                             .ToList();
-        ///
-        ///  foreach ( var result in Result )
-        ///  {
-        ///     Console.WriteLine(result);
-        ///  }
+            ///   var Result = ProductList.GroupBy(p => p.Category)
+            ///                             .Select(g => new
+            ///                             {
+            ///                                 Category = g.Key,
+            ///                                 TotalUnitsInStock = g.Sum(p => p.UnitsInStock)
+            ///                             })
+            ///                             .ToList();
+            ///
+            ///  foreach ( var result in Result )
+            ///  {
+            ///     Console.WriteLine(result);
+            ///  }
 
 
+            #endregion
+
+            #region Q10
+            ///10. Get the cheapest price among each category's products
+           ///
+          
+           
+              ///   var Result = ProductList.GroupBy(p => p.Category).Select(g => new
+              ///   {
+              ///       Category = g.Key,
+              ///       CheapestPrice= g.Min(p=>p.UnitPrice)
+              ///   });
+              ///   
+              ///   foreach (var item in Result) Console.WriteLine(item);
             #endregion
 
 
