@@ -410,27 +410,44 @@ namespace Assignment
             ///customers and products, including any duplicates
             ///
 
-        ///   var Result = ProductList.Select(p => p.ProductName.Length>3 ? p.ProductName.Substring(p.ProductName.Length-3):p.ProductName)
-        ///               .Concat(CustomerList.Select(c => c.CustomerName.Length>3 ? c.CustomerName.Substring(c.CustomerName.Length-3):c.CustomerName));
-        ///
-        ///   Result =
-        ///           (from p in ProductList
-        ///            select p.ProductName.Length >= 3
-        ///                ? p.ProductName.Substring(p.ProductName.Length - 3)
-        ///                : p.ProductName)
-        ///           .Concat(
-        ///               from c in CustomerList
-        ///               select c.CustomerName.Length >= 3
-        ///                   ? c.CustomerName.Substring(c.CustomerName.Length - 3)
-        ///                   : c.CustomerName
-        ///           );
-        ///
-        ///
-        ///
-        ///   foreach (var item in Result) Console.WriteLine(item);
-        ///
-         
+            ///   var Result = ProductList.Select(p => p.ProductName.Length>3 ? p.ProductName.Substring(p.ProductName.Length-3):p.ProductName)
+            ///               .Concat(CustomerList.Select(c => c.CustomerName.Length>3 ? c.CustomerName.Substring(c.CustomerName.Length-3):c.CustomerName));
+            ///
+            ///   Result =
+            ///           (from p in ProductList
+            ///            select p.ProductName.Length >= 3
+            ///                ? p.ProductName.Substring(p.ProductName.Length - 3)
+            ///                : p.ProductName)
+            ///           .Concat(
+            ///               from c in CustomerList
+            ///               select c.CustomerName.Length >= 3
+            ///                   ? c.CustomerName.Substring(c.CustomerName.Length - 3)
+            ///                   : c.CustomerName
+            ///           );
+            ///
+            ///
+            ///
+            ///   foreach (var item in Result) Console.WriteLine(item);
+            ///
+
             #endregion
+            #endregion
+
+            #region  Partitioning Operators
+
+            #region Q01
+            ///1. Get the first 3 orders from customers in Washington
+            ///
+            
+        ///  var Result = CustomerList.Where(c => c.Country == "Washington").Take(3);
+        ///
+        ///  Result =( from c in CustomerList
+        ///           where c.Country == "Washington"
+        ///           select c).Take(3);
+        ///
+        ///  foreach (var Customer in Result) Console.WriteLine(Customer.CustomerName);
+            #endregion
+
             #endregion
 
 
