@@ -260,21 +260,48 @@ namespace Assignment
             ///1. Get the products with the cheapest price in each category (Use Let)
             ///
 
-             ///  var Result = (from p in ProductList
-          ///                group p by p.Category
-          ///              into g
-          ///                let minprice = g.Min(P => P.UnitPrice)
-          ///                select new
-          ///                {
-          ///                    Category = g.Key
-          ///                        ,
-          ///                    CheapestPric = minprice
-          ///                }).ToList();
-          /// 
-          ///         foreach(var item in Result) Console.WriteLine(item);
+            ///  var Result = (from p in ProductList
+            ///                group p by p.Category
+            ///              into g
+            ///                let minprice = g.Min(P => P.UnitPrice)
+            ///                select new
+            ///                {
+            ///                    Category = g.Key
+            ///                        ,
+            ///                    CheapestPric = minprice
+            ///                }).ToList();
+            /// 
+            ///         foreach(var item in Result) Console.WriteLine(item);
 
 
             #endregion
+
+
+            #region Q012
+            ///12. Get the most expensive price among each category's products.
+            ///
+
+        ///   var Result =( ProductList.GroupBy(p => p.Category).Select(g => new
+        ///   {
+        ///       Category = g.Key 
+        ///       , ExpensivePrice =  g.Max(P=>P.UnitPrice)
+        ///   })).ToList();
+        /// 
+        ///   Result =( from p in ProductList
+        ///            group p by p.Category
+        ///            into g
+        ///            let MaxPrice = g.Max(p => p.UnitPrice)
+        ///            select new
+        ///            {
+        ///                Category = g.Key
+        ///                      ,
+        ///                ExpensivePrice = MaxPrice
+        ///            }).ToList();
+        /// 
+        ///   foreach (var item in Result) Console.WriteLine(item);
+            #endregion
+
+
             #endregion
 
 
