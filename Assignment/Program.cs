@@ -485,15 +485,32 @@ namespace Assignment
             /// 4.Get the elements of the array starting from the first element divisible by 3.
             /// 
 
-        ///      int[] numbers = { 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 };
+            ///      int[] numbers = { 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 };
+            ///
+            ///     var Result = numbers.SkipWhile(x => x % 3 != 0);
+            ///
+            ///    Result = from n in numbers
+            ///           .SkipWhile(x => x % 3 != 0)
+            ///            select n;
+            ///
+            ///   foreach( var x in Result)Console.WriteLine(x);
+
+
+            #endregion
+
+            #region Q05
+            /// 5.Get the elements of the array starting from the first element less than its position.
+            /// 
+
+        ///   int[] numbers = { 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 };
         ///
-        ///     var Result = numbers.SkipWhile(x => x % 3 != 0);
+        ///   var Result = numbers.SkipWhile((number, index) => number>index );
         ///
-        ///    Result = from n in numbers
-        ///           .SkipWhile(x => x % 3 != 0)
+        ///   Result = from n in numbers
+        ///           .SkipWhile((number, index) => number > index)
         ///            select n;
         ///
-        ///   foreach( var x in Result)Console.WriteLine(x);
+        ///   foreach (var item in Result)Console.WriteLine(item);
 
 
             #endregion
