@@ -132,26 +132,47 @@ namespace Assignment
             //Get the total number of characters of all words in dictionary_english.txt(Read dictionary_english.txt
             //into Array of String First).
 
-        ///  string filePath = @"D:\Route\LINQ\Session02\Day_02_LINQ\dictionary_english.txt";
-        ///  if (File.Exists(filePath))
-        ///  {
-        ///      string[] dictionary = File.ReadAllLines(filePath);
-        ///      
-        ///      var Result = dictionary.Sum(x => x.Length);
-        ///
-        ///      Result = (from d in dictionary
-        ///                select d.Length).Sum();
-        ///
-        ///      Console.WriteLine(Result);  
-        ///
-        ///    
-        ///  } else Console.WriteLine("Number is not foune\n");
+            ///  string filePath = @"D:\Route\LINQ\Session02\Day_02_LINQ\dictionary_english.txt";
+            ///  if (File.Exists(filePath))
+            ///  {
+            ///      string[] dictionary = File.ReadAllLines(filePath);
+            ///      
+            ///      var Result = dictionary.Sum(x => x.Length);
+            ///
+            ///      Result = (from d in dictionary
+            ///                select d.Length).Sum();
+            ///
+            ///      Console.WriteLine(Result);  
+            ///
+            ///    
+            ///  } else Console.WriteLine("Number is not foune\n");
 
-         
+
 
 
             #endregion
 
+            #region Q06 
+
+            /// 6.Get the length of the shortest word in dictionary_english.txt(Read dictionary_english.txt into Array of String First).
+            /// 
+
+
+            ///  string filePath = @"D:\Route\LINQ\Session02\Day_02_LINQ\dictionary_english.txt";
+            ///  if (File.Exists(filePath))
+            ///  {
+            ///      string[] dictionary = File.ReadAllLines(filePath);
+            ///      
+            ///      var Result = dictionary.Min(x=>x.Length);
+            ///
+            ///       Result = (from d in dictionary
+            ///                 select d.Length).Min();
+            ///
+            ///      Console.WriteLine(Result);  
+            ///
+            ///    
+            ///  } else Console.WriteLine("There is no word\n"); 
+            #endregion
 
             #endregion
 
