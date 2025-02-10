@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Diagnostics;
 using System.Linq;
 using System.Numerics;
@@ -393,15 +394,42 @@ namespace Assignment
             #region Q04
             ///4. Create one sequence that contains the first letters of product names that are not also first letters of customer names.
             ///
-        
-            
-         ///   var Result = ProductList.Select(x => x.ProductName[0]).Except(CustomerList.Select(c => c.CustomerName[0]));
-         ///
-         ///   Result = (from P in ProductList select P.ProductName[0])
-         ///             .Except(from c in CustomerList select c.CustomerName[0]);
-         ///
-         ///   foreach (var item in Result) Console.WriteLine(item);
 
+
+            ///   var Result = ProductList.Select(x => x.ProductName[0]).Except(CustomerList.Select(c => c.CustomerName[0]));
+            ///
+            ///   Result = (from P in ProductList select P.ProductName[0])
+            ///             .Except(from c in CustomerList select c.CustomerName[0]);
+            ///
+            ///   foreach (var item in Result) Console.WriteLine(item);
+
+            #endregion
+
+            #region Q05
+            ///5. Create one sequence that contains the last Three Characters in each name of all 
+            ///customers and products, including any duplicates
+            ///
+
+        ///   var Result = ProductList.Select(p => p.ProductName.Length>3 ? p.ProductName.Substring(p.ProductName.Length-3):p.ProductName)
+        ///               .Concat(CustomerList.Select(c => c.CustomerName.Length>3 ? c.CustomerName.Substring(c.CustomerName.Length-3):c.CustomerName));
+        ///
+        ///   Result =
+        ///           (from p in ProductList
+        ///            select p.ProductName.Length >= 3
+        ///                ? p.ProductName.Substring(p.ProductName.Length - 3)
+        ///                : p.ProductName)
+        ///           .Concat(
+        ///               from c in CustomerList
+        ///               select c.CustomerName.Length >= 3
+        ///                   ? c.CustomerName.Substring(c.CustomerName.Length - 3)
+        ///                   : c.CustomerName
+        ///           );
+        ///
+        ///
+        ///
+        ///   foreach (var item in Result) Console.WriteLine(item);
+        ///
+         
             #endregion
             #endregion
 
