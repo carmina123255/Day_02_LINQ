@@ -438,14 +438,29 @@ namespace Assignment
             #region Q01
             ///1. Get the first 3 orders from customers in Washington
             ///
-            
-        ///  var Result = CustomerList.Where(c => c.Country == "Washington").Take(3);
-        ///
-        ///  Result =( from c in CustomerList
-        ///           where c.Country == "Washington"
-        ///           select c).Take(3);
-        ///
-        ///  foreach (var Customer in Result) Console.WriteLine(Customer.CustomerName);
+
+            ///  var Result = CustomerList.Where(c => c.Country == "Washington").Take(3);
+            ///
+            ///  Result =( from c in CustomerList
+            ///           where c.Country == "Washington"
+            ///           select c).Take(3);
+            ///
+            ///  foreach (var Customer in Result) Console.WriteLine(Customer.CustomerName);
+            #endregion
+
+            #region Q02
+            ///2. Get all but the first 2 orders from customers in Washington.
+            ///
+      
+            ///   var Result = CustomerList.Where(c => c.Country == "Washington").Skip(2);
+          ///
+          ///   Result =( from c in CustomerList
+          ///            where c.Address == "Washington"
+          ///            select c).Skip(2);
+          ///
+         ///   foreach (var Customer in Result) Console.WriteLine(Customer.CustomerName);  
+
+
             #endregion
 
             #endregion
