@@ -111,22 +111,47 @@ namespace Assignment
 
 
             #region Q04 
-           /// 4.Get the total of the numbers in an array.
-           /// 
+            /// 4.Get the total of the numbers in an array.
+            /// 
 
 
-          /// int [] Arr = { 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 };
-          ///
-          ///  var Result = Arr.Sum();
-          ///
-          ///  Result = (from a in Arr
-          ///            select a).Sum();
-          ///
-          ///  Console.WriteLine(Result);
+            /// int [] Arr = { 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 };
+            ///
+            ///  var Result = Arr.Sum();
+            ///
+            ///  Result = (from a in Arr
+            ///            select a).Sum();
+            ///
+            ///  Console.WriteLine(Result);
 
 
 
             #endregion
+
+            #region Q05
+            //Get the total number of characters of all words in dictionary_english.txt(Read dictionary_english.txt
+            //into Array of String First).
+
+        ///  string filePath = @"D:\Route\LINQ\Session02\Day_02_LINQ\dictionary_english.txt";
+        ///  if (File.Exists(filePath))
+        ///  {
+        ///      string[] dictionary = File.ReadAllLines(filePath);
+        ///      
+        ///      var Result = dictionary.Sum(x => x.Length);
+        ///
+        ///      Result = (from d in dictionary
+        ///                select d.Length).Sum();
+        ///
+        ///      Console.WriteLine(Result);  
+        ///
+        ///    
+        ///  } else Console.WriteLine("Number is not foune\n");
+
+         
+
+
+            #endregion
+
 
             #endregion
 
