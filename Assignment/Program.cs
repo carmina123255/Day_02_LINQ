@@ -82,14 +82,30 @@ namespace Assignment
             #region Q02
             // 2.Return a list of customers and how many orders each has.
 
-         ///  var Result = CustomerList.GroupBy(c => c.CustomerName,(Key,Product)=>new {Customer=Key,Count=Product.Count()}).ToList();
-         ///
-         ///  foreach (var item in Result)
-         ///  {
-         ///    Console.WriteLine(item);
-         ///  }
-          
-           
+            ///  var Result = CustomerList.GroupBy(c => c.CustomerName,(Key,Product)=>new {Customer=Key,Count=Product.Count()}).ToList();
+            ///
+            ///  foreach (var item in Result)
+            ///  {
+            ///    Console.WriteLine(item);
+            ///  }
+
+
+            #endregion
+
+            #region Q03
+           // Return a list of categories and how many products each has
+
+          ///  var Result =ProductList.GroupBy(P=>P.Category,(Key,k)=>new {Category =Key, Count=k.Count()}).ToList();
+          ///
+          ///  Result =
+          ///          (from p in ProductList
+          ///           group p by p.Category into g
+          ///           select new { Category = g.Key, Count = g.Count() })
+          ///          .ToList();
+          ///
+          ///  foreach (var item in Result) Console.WriteLine(item);
+
+
             #endregion
 
             #endregion
