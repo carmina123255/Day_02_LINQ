@@ -6,10 +6,12 @@ using System.ComponentModel.DataAnnotations;
 using System.Diagnostics;
 using System.Linq;
 using System.Numerics;
+using System.Runtime.Intrinsics.X86;
 using System.Security.Cryptography;
 using System.Xml.Linq;
 using System.Xml.Schema;
 using static Assignment.ListGenerators;
+using static System.Net.Mime.MediaTypeNames;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Assignment
@@ -594,23 +596,51 @@ namespace Assignment
 
 
 
-        ///   List<int> numbers = new List<int> { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 };
-        ///
-        ///   var Result = numbers.GroupBy(x => x % 5);
-        ///
-        ///   Result = from n in numbers
-        ///            group n by n % 5;
-        ///           
-        ///
-        ///   foreach( var result in Result )
-        ///   {
-        ///       Console.WriteLine(result.Key);
-        ///       foreach (var item in result) Console.WriteLine($"...{item}");
-        ///   }
+            ///   List<int> numbers = new List<int> { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 };
+            ///
+            ///   var Result = numbers.GroupBy(x => x % 5);
+            ///
+            ///   Result = from n in numbers
+            ///            group n by n % 5;
+            ///           
+            ///
+            ///   foreach( var result in Result )
+            ///   {
+            ///       Console.WriteLine($"number with reminder by 5 is {result.Key}");
+            ///       foreach (var item in result) Console.WriteLine($"...{item}");
+            ///   }
 
 
             #endregion
 
+            #region Q02 
+            ///Uses group by to partition a list of words by their first letter.Use dictionary_english.txt for Input
+            ///
+
+           
+        ///   string filePath = @"D:\Route\LINQ\Session02\Day_02_LINQ\dictionary_english.txt";
+        ///
+        ///    if (File.Exists(filePath))
+        ///
+        ///    {
+        ///
+        ///        string[] dictionary = File.ReadAllLines(filePath);
+        ///
+        ///        var Result = dictionary.GroupBy(p => p[0]);
+        ///
+        ///        Result = from d in dictionary
+        ///                 group d by d[0];
+        ///
+        ///        foreach (var item in Result)
+        ///        {
+        ///            Console.WriteLine(item.Key);
+        ///            foreach(var item2 in item) Console.WriteLine($"..{item2}");
+        ///        }
+        ///
+        ///    }
+        ///    else Console.WriteLine("There is no word\n");
+
+            #endregion
 
             #endregion
 
