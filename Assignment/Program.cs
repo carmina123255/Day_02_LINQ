@@ -305,22 +305,45 @@ namespace Assignment
             #region Q13
             ///13. Get the products with the most expensive price in each category.
 
-         ///  var Result = from p in ProductList
-         ///               group p by p.Category
-         ///               into g
-         ///               let MaxPrice = g.Max(p => p.UnitPrice)
-         ///               from gn in g
-         ///               where gn.UnitPrice == MaxPrice
-         ///               select new
-         ///               {
-         ///                   Category = gn.Category,
-         ///                   UnitPrice = gn.ProductName,
-         ///               };
-         ///                           
-         ///
-         ///  foreach(var item in Result) Console.WriteLine(item); 
+            ///  var Result = from p in ProductList
+            ///               group p by p.Category
+            ///               into g
+            ///               let MaxPrice = g.Max(p => p.UnitPrice)
+            ///               from gn in g
+            ///               where gn.UnitPrice == MaxPrice
+            ///               select new
+            ///               {
+            ///                   Category = gn.Category,
+            ///                   UnitPrice = gn.ProductName,
+            ///               };
+            ///                           
+            ///
+            ///  foreach(var item in Result) Console.WriteLine(item); 
             #endregion
 
+            #region Q14
+            ///14. Get the average price of each category's products.
+
+       ///  var Result = ProductList.GroupBy(a => a.Category)
+       ///                          .Select(b => new
+       ///                          {
+       ///                              Category =b.Key,
+       ///                              AveragePrice =b.Average(a=>a.UnitPrice)
+       /// 
+       ///                          }).ToList();
+       /// 
+       ///  Result = (from a in ProductList
+       ///           group a by a.Category
+       ///           into b
+       ///           let c = b.Average(a => a.UnitPrice)
+       ///           select new
+       ///           {
+       ///               Category = b.Key,
+       ///               AveragePrice = b.Average(a => a.UnitPrice)
+       ///           }).ToList();
+       /// 
+       ///  foreach(var result in Result) Console.WriteLine(result);
+            #endregion
 
             #endregion
 
