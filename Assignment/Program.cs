@@ -62,21 +62,34 @@ namespace Assignment
             #region Aggregate Operators
 
             #region Q01
-           /// 1.Uses Count to get the number of odd numbers in the array
-           /// 
+            /// 1.Uses Count to get the number of odd numbers in the array
+            /// 
 
-        ///  int[] Arr = { 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 };
-        ///
-        ///   var Result = Arr.Count(p => p % 2 == 1);
-        ///
-        ///      Result = (from p in Arr
-        ///                where p % 2 == 1
-        ///                select p).Count();
-        ///
-        ///   Console.WriteLine(Result);
+            ///  int[] Arr = { 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 };
+            ///
+            ///   var Result = Arr.Count(p => p % 2 == 1);
+            ///
+            ///      Result = (from p in Arr
+            ///                where p % 2 == 1
+            ///                select p).Count();
+            ///
+            ///   Console.WriteLine(Result);
 
 
 
+            #endregion
+
+            #region Q02
+            // 2.Return a list of customers and how many orders each has.
+
+         ///  var Result = CustomerList.GroupBy(c => c.CustomerName,(Key,Product)=>new {Customer=Key,Count=Product.Count()}).ToList();
+         ///
+         ///  foreach (var item in Result)
+         ///  {
+         ///    Console.WriteLine(item);
+         ///  }
+          
+           
             #endregion
 
             #endregion
